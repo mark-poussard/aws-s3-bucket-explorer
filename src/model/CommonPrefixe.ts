@@ -8,6 +8,11 @@ export default class CommonPrefixe{
         this.prefix = prefix;
     }
 
+    getName = () => {
+        const splitPrefix = this.prefix.split("/");
+        return splitPrefix[splitPrefix.length-1];
+    }
+
     static deserialize = (xml : Element) => {
         const prefix = XmlDeserializationHelper.assertField(xml, "prefix", FieldType.STRING);
 

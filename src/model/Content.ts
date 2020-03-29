@@ -16,6 +16,11 @@ export default class Content{
         this.storageClass = storageClass;
     }
 
+    getName = () => {
+        const splitKey = this.key.split("/");
+        return splitKey[splitKey.length-1];
+    }
+
     static deserialize = (xml : Element) => {
         const key = XmlDeserializationHelper.assertField(xml, "Key", FieldType.STRING);
         const lastModified = XmlDeserializationHelper.assertField(xml, "LastModified", FieldType.DATE);
