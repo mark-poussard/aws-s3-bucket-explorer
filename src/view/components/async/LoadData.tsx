@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Loader from './Loader';
 
 interface ILoadComponentProps<T>{
     promise : Promise<T>;
@@ -12,7 +11,7 @@ const LoadData = <T extends unknown> (props : ILoadComponentProps<T>) => {
         setPromiseValue(value);
     });
     if(promiseValue == null){
-        return <Loader />
+        return <span>Loading...</span>
     }
     return (
         <>

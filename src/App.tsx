@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import AppRouter from './AppRouter';
+import BucketNavigator from './view/BucketNavigator';
 
 const App : React.FunctionComponent = props => {
   return (
     <div className={`App`}>
-      <AppRouter />
+      <BucketNavigator />
     </div>
   )
 }

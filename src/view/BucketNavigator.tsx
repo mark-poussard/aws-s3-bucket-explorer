@@ -3,7 +3,7 @@ import LoadData from './components/async/LoadData';
 import S3NavigationController from '../business/network/ObjectsController';
 import ListBucketResultView from './ListBucketResultView';
 
-const PrefixNavigator : React.FC = props => {
+const BucketNavigator : React.FC = props => {
     const [prefix, setPrefix] = useState("");
     return (
         <LoadData promise={S3NavigationController.get(prefix)}>
@@ -14,4 +14,4 @@ const PrefixNavigator : React.FC = props => {
         </LoadData>
     )
 }
-export default PrefixNavigator;
+export default BucketNavigator;
