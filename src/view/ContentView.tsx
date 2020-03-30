@@ -9,7 +9,7 @@ interface IContentViewProps{
 const ContentView : React.FC<IContentViewProps> = props => {
     return (
         <div>
-            <S3ObjectLink key={props.content.key}>
+            <S3ObjectLink linkPath={props.content.key}>
                 {props.content.getName()}
             </S3ObjectLink>
         </div>

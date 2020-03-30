@@ -7,7 +7,7 @@ interface IHomeLinkProps{
 
 const HomeLink : React.FC<IHomeLinkProps> = props => {
     return (
-        <NavigationLink doNavigate={() => props.setPrefix("")}>Home</NavigationLink>
+        <NavigationLink doNavigate={() => props.setPrefix("")}>Home/</NavigationLink>
     )
 }
 export default HomeLink;

@@ -91,12 +91,16 @@ export const assertType = <T> (value : any, type : FieldType<T>) => {
     switch(type){
         case FieldType.STRING:
             value = castToString(value);
+            break;
         case FieldType.NUMBER:
             value = castToNumber(value);
+            break;
         case FieldType.BOOLEAN:
             value = castToBoolean(value);
+            break;
         case FieldType.DATE:
             value = castToDate(value);
+            break;
             
     }
     return value as T;

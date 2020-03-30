@@ -23,8 +23,8 @@ class XmlDeserializationHelper{
     assertArray = <T> (xml : Element, field : string, handler : (xml : Element) => T) => {
         const array : T[] = [];
         const elements = xml.getElementsByTagName(field);
-        for(const element of elements){
-            array.push(handler(element));
+        for (let i = 0; i < elements.length; i++) {
+            array.push(handler(elements[i]));
         }
         return array;
     }

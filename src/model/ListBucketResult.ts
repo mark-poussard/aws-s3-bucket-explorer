@@ -1,5 +1,5 @@
-import CommonPrefixe from "./CommonPrefixe";
-import Content from "./Content";
+import CommonPrefixe, { MOCK_COMMON_PREFIXE } from "./CommonPrefixe";
+import Content, { MOCK_CONTENT } from "./Content";
 import { FieldType } from "./deserialization/FieldType";
 import XmlDeserializationHelper from "./deserialization/XmlDeserializationHelper";
 
@@ -36,3 +36,13 @@ export default class ListBucketResult{
         return new ListBucketResult(name, prefix, marker, maxKeys, isTruncated, contents, commonPrefixes);
     }
 }
+
+export const MOCK_LIST_BUCKET_RESULT = new ListBucketResult(
+    "Mock Bucket",
+    "",
+    "",
+    1000,
+    false,
+    [MOCK_CONTENT],
+    [MOCK_COMMON_PREFIXE]
+)

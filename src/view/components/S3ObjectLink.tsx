@@ -2,12 +2,12 @@ import React from 'react';
 import Settings from '../../Settings';
 
 interface IS3ObjectLinkProps{
-    key : string;
+    linkPath : string;
 }
 
 const S3ObjectLink : React.FC<IS3ObjectLinkProps> = props => {
     return (
-        <a href={Settings.S3_URL + props.key}>
+        <a href={Settings.S3_URL + props.linkPath} download>
             {props.children}
         </a>
     )

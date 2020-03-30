@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeLink from './components/HomeLink';
 import NavigationLink from './components/NavigationLink';
+import './NavigationView.scss';
 
 interface INavigationViewProps{
     prefix : string;
@@ -8,7 +9,7 @@ interface INavigationViewProps{
 }
 
 const NavigationView : React.FC<INavigationViewProps> = props => {
-    const prefixSplitArray = props.prefix.split("/");
+    const prefixSplitArray = props.prefix.split("/").filter(x => x.length > 0);
     let prefixAggregation = "";
     const prefixes : string[] = [];
     for(const prefix of prefixSplitArray){
@@ -16,7 +17,8 @@ const NavigationView : React.FC<INavigationViewProps> = props => {
         prefixes.push(prefixAggregation);
     }
     return (
-        <div>
+        <div className={`navigation-view`}>
+            >
             <HomeLink setPrefix={props.setPrefix}/>
             {prefixes.map((prefix, i) =>
                 <NavigationLink doNavigate={() => props.setPrefix(prefix)}>

@@ -17,7 +17,7 @@ export default class Content{
     }
 
     getName = () => {
-        const splitKey = this.key.split("/");
+        const splitKey = this.key.split("/").filter(x => x.length > 0);
         return splitKey[splitKey.length-1];
     }
 
@@ -31,3 +31,11 @@ export default class Content{
         return new Content(key, lastModified, eTag, size, storageClass);
     }
 }
+
+export const MOCK_CONTENT = new Content(
+    "rootObject.pdf",
+    new Date(),
+    "",
+    60000,
+    "StorageClass"
+)
