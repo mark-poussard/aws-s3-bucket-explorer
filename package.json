@@ -19,7 +19,7 @@
     "@types/react-dom": "16.0.11",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.13.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "2.1.8",
     "typescript": "3.7.2"
   },
   "eslintConfig": {
